@@ -1,0 +1,12 @@
+<div>
+    <h4>{{ title }}</h4>
+    <ul>
+        <li *ngFor="let n of menuList" (click)="select(n.name);"
+            [ngClass]="{active: isActive(n.name)}">
+            <span>{{n.name}}</span>
+            <ul style="display:none;">
+                <li *ngFor="let child of n.subMenu">{{child}}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
