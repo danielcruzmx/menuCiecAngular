@@ -1,11 +1,15 @@
 <div>
-    <h4>{{ title }}</h4>
-    <ul>
+    <h4 class="subencabezado">{{ title }}</h4>
+    <ul id="lista2">
         <li *ngFor="let n of menuList" (click)="select(n.name);"
             [ngClass]="{active: isActive(n.name)}">
             <span>{{n.name}}</span>
             <ul style="display:none;">
-                <li *ngFor="let child of n.subMenu">{{child}}</li>
+                <li *ngFor="let child of n.subMenu">
+                    <a href="{{ child[1] }}" target="_blank">
+                        {{ child[0] }}
+                    </a>
+                </li>
             </ul>
         </li>
     </ul>
